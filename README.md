@@ -1,1 +1,1 @@
-# StockClub
+# StockClub Project
