@@ -16,12 +16,15 @@ module.exports = (sequelize, DataTypes) => {
         liquidAsset: DataTypes.DECIMAL,
         portfolioValue: DataTypes.DECIMAL,
         updateTime: DataTypes.TIME,
-        joinData: DataTypes.DATEONLY
+        joinDate: DataTypes.DATEONLY
     },{
         timestamps:false,
         freezeTableName:true
     })
     
-    return Users
+    // Users.associate = function(models) {
+    //     Users.hasMany(models.stocks, {as : 'userId', key : 'id', through:'mappingtable'})
+    // }    
+        return Users
 
 }

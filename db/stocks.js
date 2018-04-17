@@ -15,6 +15,9 @@ module.exports = (sequelize, DataTypes) => {
         timestamps:false,
         freezeTableName:true
     });
-    
+Stocks.associate = function(models) {
+    Stocks.belongsToMany(models.users, {as : 'stockId', key : 'id', through:'mappingtable'})
+}    
     return Stocks;
 };
+
