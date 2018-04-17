@@ -1,3 +1,1 @@
-# StockClub
-
-A stock market project
+# StockClub Project
