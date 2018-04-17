@@ -13,6 +13,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         password: DataTypes.STRING,
         emailAdress: DataTypes.STRING,
+        liquidAsset: DataTypes.DECIMAL,
+        portfolioValue: DataTypes.DECIMAL,
+        updateTime: DataTypes.TIME,
         joinData: DataTypes.DATEONLY
     },{
         timestamps:false,

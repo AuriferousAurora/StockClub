@@ -5,24 +5,24 @@ module.exports = (sequelize, DataTypes) => {
     // create mappingtable where pull date from each table
     var Mappingtable = sequelize.define('mappingtable',
     {
-        user_id: {
+        userId: {
             type: DataTypes.INTEGER,
             // references: {
             //     model: Users,
             //     key: "id"
             // }
         },
-        stock_id:{
+        stockId:{
             type: DataTypes.INTEGER,
             // references: {
             //     model: Stocks,
             //     key: "id"
             // }
         },
-        initial_value: {
+        initialPurchaseValue: {
             type: DataTypes.DECIMAL,
         },
-        number_of_shares_owned: {
+        numberOfSharesOwned: {
             type: DataTypes.INTEGER
         }
     },{
@@ -32,10 +32,11 @@ module.exports = (sequelize, DataTypes) => {
 
     // creating an association between user, stocks and wallet
     Mappingtable.associate = function(models) {
-        Mappingtable.hasOne(models.usres, {as: 'usersid', foreignKey: 'id'});
+        console.log(models)
+        Mappingtable.hasMany(models.users, {as: 'usersId', foreignKey: 'id'});
     };
     Mappingtable.associate = function(models) {
-        Mappingtable.hasOne(models.stocks, {as: 'stocksid', foreignKey:'id'})
+        Mappingtable.hasMany(models.stocks, {as: 'stocksId', foreignKey:'id'})
     }
     
     return Mappingtable;

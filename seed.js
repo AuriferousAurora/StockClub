@@ -1,8 +1,8 @@
 const db = require('./db');
 
-const Stocks = require('./db/stocks')
+// const Stocks = require('./db/stocks')
 
-// seed the table with 30 hardcoded companies info
+// seed the stocks table with 30 hardcoded companies info
 
 const stocks = [
         {
@@ -126,8 +126,9 @@ const stocks = [
             stock_symbol: "WMT"
         }
     ]
-
-db.stocks.bulkCreate(stocks)
+db.stocks.sync({force:true})
+.then(() => {
+db.stocks.bulkCreate(stocks)})
 .then(()=>{
     return db.stocks.findAll();
 })

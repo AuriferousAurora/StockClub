@@ -3,12 +3,12 @@
 module.exports = (sequelize, DataTypes) => {
     var Stocks = sequelize.define('stocks',
     {
-        company_name: DataTypes.STRING,
-        stock_symbol: {
+        companyName: DataTypes.STRING,
+        stockSymbol: {
             type: DataTypes.STRING,
             unique:true
         },
-        current_value_per_share: {
+        currentValuePerShare: {
             type: DataTypes.DECIMAL,
         }
     },{
