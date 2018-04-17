@@ -1,0 +1,31 @@
+{
+  "name": "stockclub",
+  "version": "1.0.0",
+  "description": "mock stock trading",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zzhang46516/StockClub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zzhang46516/StockClub/issues"
+  },
+  "homepage": "https://github.com/zzhang46516/StockClub#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "i": "^0.3.6",
+    "jquery": "^3.3.1",
+    "npm": "^5.8.0",
+    "pg": "^7.4.1",
+    "pg-hstore": "^2.3.2",
+    "pg-promise": "^8.2.3",
+    "sequelize": "^4.37.6",
+    "sequelize-cli": "^4.0.0"
+  }
+}
