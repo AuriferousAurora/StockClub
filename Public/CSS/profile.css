@@ -1,0 +1,64 @@
+body {
+    background-color: #96E072;
+    margin: 0;
+}
+
+.container{
+    height:100%;
+    width:100%;
+    display:inline-block;
+    justify-content: center;
+    align-items: center;
+}
+
+.profilePicture{
+    display:flex;
+    height:175px;
+    width:100%;
+    align-content: center;
+    justify-content: center;
+
+
+}
+
+.profileNetWorthContainer{
+    display:flex;
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.profileNetWorth{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 90%;
+    width: 85%;
+    background-color: #5F6062;
+    font-family: 'Poiret One', cursive;
+    color:white;
+}
+
+.profileLiquidAssetsContainer{
+    display:flex;
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileLiquidAssets{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 90%;
+    width: 85%;
+    background-color: #5F6062;
+    font-family: 'Poiret One', cursive;
+    color:white;
+}
