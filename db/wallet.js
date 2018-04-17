@@ -3,20 +3,20 @@
 module.exports = (sequelize, DataTypes) => {
     
     // Create wallet table
-    var Wallet = connection.define('wallet',
+    var Wallet = sequelize.define('wallet',
     {
         user_id: {
-            type: Sequelize.INTEGER,
-            references: {
-                model: Users,
-                key: 'id',
-            }
+            type: DataTypes.INTEGER,
+            // references: {
+            //     model: Users,
+            //     key: 'id',
+            // }
         },
         current_available: {
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
         },
         initial_current: {
-            type: Sequelize.INTEGER,
+            type: DataTypes.INTEGER,
             defaultValue: 100000
         }
     },{
@@ -25,9 +25,9 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     // creating an association between wallet and users
-    wallet.associate = function (models) {
-        wallet.belongTo(models.users, {as : 'users', foreignKey : 'id'})
+    Wallet.associate = function (models) {
+        Wallet.belongsTo(models.users, {as : 'usersid', foreignKey : 'id'})
     }
 
-    return wallet;
+    return Wallet;
 }

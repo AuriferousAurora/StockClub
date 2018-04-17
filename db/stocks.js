@@ -1,19 +1,20 @@
 'use strict';
 // create stocks table (30 stocks)
 module.exports = (sequelize, DataTypes) => {
-    var Stocks = connection.define('stocks',
+    var Stocks = sequelize.define('stocks',
     {
-        company_name: Sequelize.STRING,
+        company_name: DataTypes.STRING,
         stock_symbol: {
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             unique:true
         },
         current_value_per_share: {
-            type: Sequelize.DECIMAL,
+            type: DataTypes.DECIMAL,
         }
     },{
         timestamps:false,
         freezeTableName:true
     });
     
+    return Stocks;
 };

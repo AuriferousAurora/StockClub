@@ -4,19 +4,21 @@
 
 module.exports = (sequelize, DataTypes) => {
 
-var Users = connection.define('users',
-{
-    user_name: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        unique:true,
-    },
-    password: Sequelize.INTEGER,
-    emailAdress: Sequelize.STRING,
-    joinData: Sequelize.DATEONLY
-},{
-    timestamps:false,
-    freezeTableName:true
-})
+    var Users = sequelize.define('users',
+    {
+        user_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique:true,
+        },
+        password: DataTypes.STRING,
+        emailAdress: DataTypes.STRING,
+        joinData: DataTypes.DATEONLY
+    },{
+        timestamps:false,
+        freezeTableName:true
+    })
+    
+    return Users
 
 }
