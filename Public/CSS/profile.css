@@ -1,4 +1,4 @@
-body {
+body{
     background-color: #96E072;
     margin: 0;
 }
@@ -61,4 +61,27 @@ body {
     background-color: #5F6062;
     font-family: 'Poiret One', cursive;
     color:white;
+}
+
+.unsernameContainer{
+    display:flex;
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+
+}
+
+.username{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width:175px;
+    background-color: #5F6062;
+    font-family: 'Poiret One', cursive;
+    color:white;
+    margin:auto;
+    
 }
