@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: 100000.00,
         },
         portfolioValue: DataTypes.DECIMAL,
+        updateTime: DataTypes.Now,
         joinDate: {
             type: DataTypes.DATE,
             allowNull: false,
@@ -30,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
     })
     
     Users.associate = function(models) {
-        Users.belongsTo(models.transactiontable, {as : 'userId', key : 'id'})
+        Users.belongsToMany(models.transactiontable, {as : 'userId', key : 'id'})
     }    
         return Users
 }
