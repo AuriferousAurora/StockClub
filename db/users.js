@@ -13,13 +13,12 @@ module.exports = (sequelize, DataTypes) => {
         },
         password: DataTypes.STRING,
         emailAddress: DataTypes.STRING,
-        liquidAsset: {
+        currencyAvaliable: {
             type: DataTypes.DECIMAL,
             allowNull: false,
             defaultValue: 100000.00,
         },
         portfolioValue: DataTypes.DECIMAL,
-        updateTime: DataTypes.TIME,
         joinDate: {
             type: DataTypes.DATE,
             allowNull: false,
@@ -30,8 +29,8 @@ module.exports = (sequelize, DataTypes) => {
         freezeTableName:true
     })
     
-    // Users.associate = function(models) {
-    //     Users.hasMany(models.stocks, {as : 'userId', key : 'id', through:'mappingtable'})
-    // }    
+    Users.associate = function(models) {
+        Users.belongsTo(models.transactiontable, {as : 'userId', key : 'id'})
+    }    
         return Users
 }

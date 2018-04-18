@@ -3,9 +3,9 @@ const sequelize = new Sequelize('postgres://localhost:5432/stockClub');
 
 const models = {
     users: sequelize.import('./users'),
-    stocks: sequelize.import('./stocks'),
+    transactiontable: sequelize.import('./transactiontable'),
     // wallet: sequelize.import('./wallet'),
-    mappingtable: sequelize.import('./mappingtable')    
+    // mappingtable: sequelize.import('./mappingtable')    
 };
 Object.keys(models).forEach(modelName => {
     if (models[modelName].associate) {
