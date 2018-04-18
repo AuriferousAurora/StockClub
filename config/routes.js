@@ -4,7 +4,7 @@ const admin = require('../app/admin')
 const users = require('../app/users')
 
 var Sequelize = require('sequelize');
-var connection = new Sequelize('postgres://localhost:5432/seqClass');
+var connection = new Sequelize('postgres://localhost:5432/stockClub');
 const bcrypt = require('bcrypt');
 
 module.exports = (app, passport, db) => {

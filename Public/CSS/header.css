@@ -1,0 +1,26 @@
+.header{
+    background-color:  rgb(108, 160, 81);
+    padding-left:10px;
+}
+
+#fantasystock{
+    font-family: 'Bitter', serif;
+    color:white;
+    padding-bottom:15px;
+
+}
+
+.button{
+    
+    border:none;
+    background-color: rgb(108, 160, 81);
+    color:white;
+    font-family: 'Poiret One', cursive;
+    font-size:20px;
+    padding: 0px 10px;
+    padding-top:10px;
+
+
+}
+
+

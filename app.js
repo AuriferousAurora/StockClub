@@ -1,29 +1,18 @@
-const express = require('express');
-const passport = require('passport'); //only one instance of passport
-const winston = require('winston');
-const db = require('./db'); //only one instance of database
+var express = require('express');
+var reload = require('reload');
+var path = require('path');
+app = express();
 
-const port = process.env.PORT || 9000;
-const app = express();
+app.set('view engine', 'ejs');
+app.set('Views');
 
-//no need to declare variable because not going to use it for anything else,
-//being passed back instances of express object back to app.js
-require('./config/passport')(passport, db);
-require('./config/express')(app, passport, db);
-// require('./config/routes')(app, passport, db);
+app.use(express.static(__dirname + "/Public"));
 
-const server = app.listen(port, () => {
-	if(app.get('env') === 'test') return
-
-	winston.log('Express app started on port ' + port)
-})
+// app.use(require('./Routes/login'));
+app.use(require('./Routes/manager'));
+// app.use(require('./Routes/profile'));
 
 
-//when you shut down this server, close the database instance
-server.on('close', () => {
-	winston.log('Closed express server')
-
-	db.pool.end(() => {
-		winston.log('Shut down connection pool')
-	})
-})
+var server = app.listen(3000,function(){
+    console.log('Stock Project listening port 3000')
+});
