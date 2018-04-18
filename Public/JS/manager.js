@@ -12,8 +12,11 @@ DOW.forEach(function(symbol) {
     .then(function(response) {
     console.log("Symbol: " + symbol + ", Price: " + response.data);
     })
-    .catch(function(error) {
+    .catch(function(error){
         console.log(error);
     })
 });
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/master
