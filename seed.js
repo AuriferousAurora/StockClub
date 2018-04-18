@@ -6,124 +6,124 @@ const db = require('./db');
 
 const stocks = [
         {
-            company_name: "3M",
-            stock_symbol: "MMM"
+            companyName: "3M",
+            stockSymbol: "MMM"
         },
         {
-            company_name: "American Express",
-            stock_symbol: "AXP"
+            companyName: "American Express",
+            stockSymbol: "AXP"
         },
         {
-            company_name: "Apple",
-            stock_symbol: "AAPL"
+            companyName: "Apple",
+            stockSymbol: "AAPL"
         },
         {
-            company_name: "Boeing",
-            stock_symbol: "BA"
+            companyName: "Boeing",
+            stockSymbol: "BA"
         },
         {
-            company_name: "Caterpillar",
-            stock_symbol: "CAT"
+            companyName: "Caterpillar",
+            stockSymbol: "CAT"
         },
         {
-            company_name: "Chevron",
-            stock_symbol: "CVX"
+            companyName: "Chevron",
+            stockSymbol: "CVX"
         },
         {
-            company_name: "Cisco",
-            stock_symbol: "CSCO"
+            companyName: "Cisco",
+            stockSymbol: "CSCO"
         },
         {
-            company_name: "Coca-Cola",
-            stock_symbol: "KO"
+            companyName: "Coca-Cola",
+            stockSymbol: "KO"
         },
         {
-            company_name: "The Walt Disney Company",
-            stock_symbol: "DIS"
+            companyName: "The Walt Disney Company",
+            stockSymbol: "DIS"
         },
         {
-            company_name: "DowDuPont",
-            stock_symbol: "DWDP"
+            companyName: "DowDuPont",
+            stockSymbol: "DWDP"
         },
         {
-            company_name: "ExxonMobil",
-            stock_symbol: "XOM"
+            companyName: "ExxonMobil",
+            stockSymbol: "XOM"
         },
         {
-            company_name: "General Electric",
-            stock_symbol: "GE"
+            companyName: "General Electric",
+            stockSymbol: "GE"
         },
         {
-            company_name: "Goldman Sachs",
-            stock_symbol: "GS"
+            companyName: "Goldman Sachs",
+            stockSymbol: "GS"
         },
         {
-            company_name: "The Home Depot",
-            stock_symbol: "HD"
+            companyName: "The Home Depot",
+            stockSymbol: "HD"
         },
         {
-            company_name: "IBM",
-            stock_symbol: "IBM"
+            companyName: "IBM",
+            stockSymbol: "IBM"
         },
         {
-            company_name: "Intel",
-            stock_symbol: "INTC"
+            companyName: "Intel",
+            stockSymbol: "INTC"
         },
         {
-            company_name: "Johnson & Johnson",
-            stock_symbol: "JNJ"
+            companyName: "Johnson & Johnson",
+            stockSymbol: "JNJ"
         },
         {
-            company_name: "JPMorgan Chase",
-            stock_symbol: "JPM"
+            companyName: "JPMorgan Chase",
+            stockSymbol: "JPM"
         },
         {
-            company_name: "McDonald's",
-            stock_symbol: "MCD"
+            companyName: "McDonald's",
+            stockSymbol: "MCD"
         },
         {
-            company_name: "Merck",
-            stock_symbol: "MRK"
+            companyName: "Merck",
+            stockSymbol: "MRK"
         },
         {
-            company_name: "Microsoft",
-            stock_symbol: "MSFT"
+            companyName: "Microsoft",
+            stockSymbol: "MSFT"
         },
         {
-            company_name: "Nike",
-            stock_symbol: "NKE"
+            companyName: "Nike",
+            stockSymbol: "NKE"
         },
         {
-            company_name: "Pfizer",
-            stock_symbol: "PFE"
+            companyName: "Pfizer",
+            stockSymbol: "PFE"
         },
         {
-            company_name: "Procter & Gamble",
-            stock_symbol: "PG"
+            companyName: "Procter & Gamble",
+            stockSymbol: "PG"
         },
         {
-            company_name: "Travelers Companies, Inc.",
-            stock_symbol: "TRV"
+            companyName: "Travelers Companies, Inc.",
+            stockSymbol: "TRV"
         },
         {
-            company_name: "United Technologies",
-            stock_symbol: "UTX"
+            companyName: "United Technologies",
+            stockSymbol: "UTX"
         },
         {
-            company_name: "UnitedHealth",
-            stock_symbol: "UNH"
+            companyName: "UnitedHealth",
+            stockSymbol: "UNH"
         },
         {
-            company_name: "Verizon",
-            stock_symbol: "VZ"
+            companyName: "Verizon",
+            stockSymbol: "VZ"
         },
         {
-            company_name: "Visa",
-            stock_symbol: "V"
+            companyName: "Visa",
+            stockSymbol: "V"
         },
         {
-            company_name: "Wal-Mart",
-            stock_symbol: "WMT"
+            companyName: "Wal-Mart",
+            stockSymbol: "WMT"
         }
     ]
 db.stocks.sync({force:true})
@@ -131,4 +131,17 @@ db.stocks.sync({force:true})
 db.stocks.bulkCreate(stocks)})
 .then(()=>{
     return db.stocks.findAll();
+})
+
+const users = [
+    {
+        userName: "blabla",
+        password: '1234',
+        emailAddress: 'user@gmail.com',
+        updateTime: db.users.NOW,
+    }
+]
+db.users.sync({force:true})
+.then(() => {
+    db.users.bulkCreate(users)
 })

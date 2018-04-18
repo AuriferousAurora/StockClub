@@ -6,17 +6,25 @@ module.exports = (sequelize, DataTypes) => {
 
     var Users = sequelize.define('users',
     {
-        user_name: {
+        userName: {
             type: DataTypes.STRING,
             allowNull: false,
             unique:true,
         },
         password: DataTypes.STRING,
-        emailAdress: DataTypes.STRING,
-        liquidAsset: DataTypes.DECIMAL,
+        emailAddress: DataTypes.STRING,
+        liquidAsset: {
+            type: DataTypes.DECIMAL,
+            allowNull: false,
+            defaultValue: 100000.00,
+        },
         portfolioValue: DataTypes.DECIMAL,
         updateTime: DataTypes.TIME,
-        joinDate: DataTypes.DATEONLY
+        joinDate: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW
+        }
     },{
         timestamps:false,
         freezeTableName:true
@@ -26,5 +34,4 @@ module.exports = (sequelize, DataTypes) => {
     //     Users.hasMany(models.stocks, {as : 'userId', key : 'id', through:'mappingtable'})
     // }    
         return Users
-
 }
