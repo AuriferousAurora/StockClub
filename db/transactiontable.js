@@ -1,5 +1,4 @@
 'use strict';
-// create stocks table (30 stocks)
 module.exports = (sequelize, DataTypes) => {
     var Transactiontable = sequelize.define('transactiontable', {
         stockSymbol: DataTypes.STRING,
@@ -16,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
         freezeTableName:true
     });
     Transactiontable.associate = function(models) {
-        Transactiontable.hasMany(models.users, {as : 'userId', key : 'id'})
+        Transactiontable.belongsTo(models.users)
     }    
     return Transactiontable;
 };
