@@ -35,7 +35,6 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
     height: 90%;
     width: 85%;
     background-color: #5F6062;
@@ -55,7 +54,6 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
     height: 90%;
     width: 85%;
     background-color: #5F6062;
@@ -84,4 +82,21 @@ body{
     color:white;
     margin:auto;
     
+}
+
+.stocksPurchasedContainer{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    background-color: #5F6062;
+    height: 90%;
+    width: 85%;
+    padding-left:10px;
+    
+}
+
+.stocksPurchased{
+    color:white;
+    font-family: 'Poiret One', cursive;
+    margin:auto;
 }
