@@ -6,6 +6,8 @@ const passport = require('passport');
 const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser')
 
+const cookieParser = require('cookie-parser')
+
 // require session and passpot local strategy
 const session = require('express-session')
 const LocalStrategy = require('passport-local').Strategy
@@ -19,11 +21,16 @@ app.set('Views');
 
 app.use(express.static(__dirname + "/Public"));
 
+app.use(cookieParser())
+app.use(passport.initialize())  
+app.use(passport.session())
+app.use(bodyParser.urlencoded({extended:true}))
 
-app.use(require('./Routes/manager'));
+app.use(require('./Routes/managerRoute'));
 app.use(require('./Routes/login'));
-app.use(require('./Routes/profile'));
-app.use(require('./Routes/ranking'));
+app.use(require('./Routes/profileRoute'));
+app.use(require('./Routes/rankingRoute'));
+app.use(require('./Routes/signup'))
 
 
 
@@ -48,8 +55,14 @@ app.post('/signup', function(req, res){
 })
 // passport and encrypt passport
 
+
+var sess = {
+    secret: "top secret",
+    cookie: {}
+}
+
 // login and authenticate
-app.use(session({secret: 'top secret'}));
+app.use(session(sess));
 passport.use(new LocalStrategy(
     function (username, password, done) {
         db.users.findOne({
@@ -57,26 +70,67 @@ passport.use(new LocalStrategy(
                 userName: username
             }
         }).then(function(result){
-            bcrypt.compare(password, result.password, function(err, res) {
-                if(res) {
-                    console.log("found user");
-                    console.log(result.id);
-                    return done(null, {id: result.id, username: result.userName})
-                }
-            })
+            if(result!== null) {
+                bcrypt.compare(password, result.password, function(err, res) {
+                    if(res) {
+                        console.log("found user");
+                        console.log(result.id);
+                        return done(null, {id: result.id, username: result.userName})
+                    } else {
+                        console.log('did not find user');
+                        done(null, false)
+                    }
+                })
+            } else {
+                console.log('did not find user');
+                done(null, false)}
         })
-        console.log('username, passowrd: ', username, password);
-        if( authenticate(username,password)) {
-
-        }
     }
 ));
 
-passport.serializeUser( function(user, password, done) {
-    conso
+passport.serializeUser( function(user, done) {
+    console.log('serializing user: Id:')
+    console.log(user.id)
+    done(null, user.id)
 })
 
+passport.deserializeUser((id, done) => {
+    db.users.findById(id).then(function(result) {
+        if (result == null)
+        {
+            return done(err)
+        }
+        console.log(result.dataValues)
+        done(null, result.dataValues)
+    })
+})
 
+app.get('/login', (req, res) => {
+    res.render('login')
+})
+
+app.post('/login',
+    passport.authenticate('local', {
+        successRedirect: '/manager',
+        failureRedirect: '/signup'
+    })
+);
+
+app.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/login');
+})
+
+const isAuthenticated = (req, res, next) => {
+    if (!req.isAuthenticated()) {
+        return res.redirect('/login');
+    }
+    return next()
+}
+
+app.get('/manager', isAuthenticated, (req, res) => {
+    res.render('manager', {user: req.user});
+});
 
 var server = app.listen(3000,function(){
     console.log('Stock Project listening port 3000')

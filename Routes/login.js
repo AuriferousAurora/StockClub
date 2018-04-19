@@ -7,5 +7,14 @@ router.get('/login', function(req,res){
 
 })
 
+router.post('/login' , function(req, res) {
+    models.users.findOne({
+        where:{
+            username : req.body.username,
+            password : req.body.password
+        }
+    })
+} )
+
 
 module.exports = router;
