@@ -21,18 +21,16 @@ app.set('Views');
 
 app.use(express.static(__dirname + "/Public"));
 
-<<<<<<< HEAD
 app.use(cookieParser())
 app.use(passport.initialize())  
 app.use(passport.session())
 app.use(bodyParser.urlencoded({extended:true}))
-=======
->>>>>>> refs/remotes/origin/zzhang
 
-app.use(require('./Routes/manager'));
+app.use(require('./Routes/managerRoute'));
 app.use(require('./Routes/login'));
-app.use(require('./Routes/profile'));
-app.use(require('./Routes/ranking'));
+app.use(require('./Routes/profileRoute'));
+app.use(require('./Routes/rankingRoute'));
+app.use(require('./Routes/signup'))
 
 
 
