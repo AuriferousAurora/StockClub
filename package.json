@@ -1,40 +1,8 @@
 {
-<<<<<<< HEAD
-  "name": "stockclub",
-  "version": "1.0.0",
-  "description": "mock stock trading",
-  "main": "app.js",
-=======
   "name": "StockClub",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "dependencies": {
-    "ejs": "^2.5.8",
-    "express": "^4.16.3",
-    "node": "^9.11.0",
-    "reload": "^2.2.2"
-  },
-  "devDependencies": {},
->>>>>>> origin
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zzhang46516/StockClub.git"
-  },
-<<<<<<< HEAD
-=======
-  "keywords": [],
->>>>>>> origin
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zzhang46516/StockClub/issues"
-  },
-<<<<<<< HEAD
-  "homepage": "https://github.com/zzhang46516/StockClub#readme",
   "dependencies": {
     "ajax-request": "^1.2.3",
     "axios": "^0.18.0",
@@ -54,11 +22,24 @@
     "pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
     "pg-promise": "^8.2.3",
+    "reload": "^2.2.2",
     "sequelize": "^4.37.6",
     "sequelize-cli": "^4.0.0",
     "winston": "^2.4.1"
-  }
-=======
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zzhang46516/StockClub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zzhang46516/StockClub/issues"
+  },
   "homepage": "https://github.com/zzhang46516/StockClub#readme"
->>>>>>> origin
 }

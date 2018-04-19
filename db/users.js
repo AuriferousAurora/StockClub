@@ -19,7 +19,11 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: 100000.00,
         },
         portfolioValue: DataTypes.DECIMAL,
-        updateTime: DataTypes.Now,
+        updateTime: {
+            type: DataTypes.TIME,
+            allowNull: false,
+            defaultValue: DataTypes.NOW
+        },
         joinDate: {
             type: DataTypes.DATE,
             allowNull: false,
@@ -29,9 +33,13 @@ module.exports = (sequelize, DataTypes) => {
         timestamps:false,
         freezeTableName:true
     })
-    
+
     Users.associate = function(models) {
-        Users.belongsToMany(models.transactiontable, {as : 'userId', key : 'id'})
-    }    
+        Users.hasOne(models.transactiontable)
+    }
+    
+    // Users.associate = function(models) {
+    //     Users.belongsTo(models.transactiontable, {as : 'userId', key : 'id'})
+    // }    
         return Users
 }
