@@ -4,6 +4,36 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "ejs": "^2.5.8",
+    "express": "^4.16.3",
+    "node": "^9.11.0",
+    "reload": "^2.2.2"
+  },
+  "devDependencies": {},
+>>>>>>> origin
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zzhang46516/StockClub.git"
+  },
+<<<<<<< HEAD
+=======
+  "keywords": [],
+>>>>>>> origin
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zzhang46516/StockClub/issues"
+  },
+<<<<<<< HEAD
+  "homepage": "https://github.com/zzhang46516/StockClub#readme",
+  "dependencies": {
+>>>>>>> master
     "ajax-request": "^1.2.3",
     "axios": "^0.18.0",
     "bcrypt": "^2.0.0",

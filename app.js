@@ -26,6 +26,7 @@ app.set('Views');
 
 app.use(express.static(__dirname + "/Public"));
 
+<<<<<<< HEAD
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(expressValidator())
@@ -153,6 +154,12 @@ const isAuthenticated = (req, res, next) => {
 app.get('/manager', isAuthenticated, (req, res) => {
     res.render('manager', {user: req.user});
 });
+=======
+app.use(require('./Routes/managerRoute'));
+app.use(require('./Routes/loginRoute'));
+app.use(require('./Routes/profileRoute'));
+app.use(require('./Routes/rankingRoute'));
+>>>>>>> master
 
 var server = app.listen(3000,function(){
     console.log('Stock Project listening port 3000')
