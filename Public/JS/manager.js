@@ -36,23 +36,5 @@ var symbolCounter = 0;
             console.log(error);
         })
     })
-<<<<<<< HEAD
-}
-
-var dowPrices = getData();
-
-function populateHTML(stocks) {
-    let symbol = document.querySelectorAll('.symbol');
-    let price = document.querySelectorAll('.price');
-
-    for (var i = 0; i < stocks.length; i++) {
-        symbol[i].innerHTML = dowPrices[i];
-        price[i].innerHTML = dowPrices[i];
-    }
-}
-
-populateHTML(dowPrices);
-=======
 
 console.log(responseObject);
->>>>>>> kyle
