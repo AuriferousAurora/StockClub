@@ -6,28 +6,30 @@ var url = 'https://api.iextrading.com/1.0/stock/';
 let dowTickSymbols = ['MMM', 'AXP', 'AAPL', 'BA', 'CAT', 'CVX','CSCO', 'KO', 'DIS', 'DWDP', 'XOM', 'GE', 'GS', 'HD', 'IBM', 'INTC', 'JNJ', 'JPM', 'MCD', 'MRK', 'MSFT', 'NKE', 'PFE', 'PG', 'TRV', 'UTX', 'UNH', 'VZ', 'V', 'WMT'];
 
 var responseObject = [];
-var symbolCounter = 0;  
+var symbolCounter = 0; 
+var object 
 
+// Instantiates a promise named 'call'. This promise contains a forEach function that loops through the 'dowTickSymbols' array. For each pass through, the ticker symbol and the current price of the stock is appended to the responseOjbect array.
+var call = new Promise((resolve, reject) => {
     dowTickSymbols.forEach(function(symbol) {  
         axios.get(url + symbol + "/price")
         .then(function(response) {
-        const object = {Symbol: dowTickSymbols[symbolCounter], Price: response.data};
+        object = {Symbol: symbol, Price: response.data};
         responseObject.push(object);
         symbolCounter += 1;
-        return responseObject;
-        })   
-        .then(function(response) {   
-        let symbol = document.querySelectorAll('.symbol');
-        let price = document.querySelectorAll('.price');
-        console.log(symbol);
-        for (var i = 0; i < 31; i++) {
-            symbol[i].innerHTML = response[i]['Symbol'];
-            price[i].innerHTML = response[i]['Price'];
-        }
-        })
+        })  
         .catch(function(error) {
             console.log(error);
         })
     })
-
-console.log(responseObject);
+    resolve(responseObject);
+}).then((response) => {  
+    let symbol = document.querySelectorAll('.symbol');
+    let price = document.querySelectorAll('.price'); 
+    setTimeout(function(){
+        for (var i = 0; i < 31; i++) {
+            symbol[i].innerHTML = responseObject[i]['Symbol'];
+            price[i].innerHTML = responseObject[i]['Price'];
+        }
+    }, 1000)
+});
