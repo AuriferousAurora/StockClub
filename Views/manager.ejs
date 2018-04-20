@@ -15,12 +15,12 @@
     <% include ./Partials/header.ejs %>
 
 
-    <%= data.emailAddress %>
+    <!-- <%= data.emailAddress %> -->
     <div class='container'>
-        <h1>Username</h1>
-        <form class='form'>
+        <h1><%= data.userName %></h1>
+        <form class='form' action="/manager" method="POST">
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol' name='symbol'></span><span class='price' name="price"></span><input type='text' placeholder='$$$$$'><button type='submit' value="Submit">Purchase</button>
         </div>
         </form>
         <form class='form'>
