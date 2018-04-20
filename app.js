@@ -36,14 +36,21 @@ var myStore = new SequelizeStore({
 //setting session information
 app.use(cookieParser())
 app.use(session({
+    secret: 'keyboard cat',
     store: myStore,
-    secret: "top secret",
     resave: false,
-    cookie: { maxAge: 14 * 24 * 60 * 60 * 1000 }
+    proxy: true
 }))
+
+myStore.sync();
+// app.use(session({
+//     secret: "top secret",
+//     resave: false,
+//     saveUninitialized:false,
+//     // cookie: { maxAge: 14 * 24 * 60 * 60 * 1000 }
+// }))
 app.use(passport.initialize())  
 app.use(passport.session())
-myStore.sync()
 
 app.use(require('./Routes/managerRoute'));
 app.use(require('./Routes/login'));
@@ -53,35 +60,7 @@ app.use(require('./Routes/signup'))
 
 
 
-// import passport and database
-app.post('/signup', function(req, res){
-    let username = req.body.username;
-    let password = bcrypt.hashSync(req.body.password, 10);
-    let email = req.body.email;
-
-
-    let user = db.users.build({
-        userName: username,
-        password: password,
-        emailAddress: email,
-    })
-
-    user.save();
-    db.users.sync();
-
-    res.redirect('/manager');
-
-})
-// passport and encrypt passport
-
-
-var sess = {
-    secret: "top secret",
-    cookie: {}
-}
-
 // login and authenticate
-app.use(session(sess));
 passport.use(new LocalStrategy(
     function (username, password, done) {
         db.users.findOne({
@@ -93,7 +72,7 @@ passport.use(new LocalStrategy(
                 bcrypt.compare(password, result.password, function(err, res) {
                     if(res) {
                         console.log("found user");
-                        console.log(sess)
+                        // console.log(sess)
                         console.log(result.id);
                         return done(null, {id: result.id, username: result.userName})
                     } else {
@@ -110,7 +89,7 @@ passport.use(new LocalStrategy(
 
 passport.serializeUser( function(user, done) {
     console.log('serializing user: Id:')
-    console.log(user.id)
+    console.log(user.id, "hahaha")
     done(null, user.id)
 })
 
@@ -120,7 +99,7 @@ passport.deserializeUser((id, done) => {
         {
             return done(err)
         }
-        console.log(result.dataValues)
+        console.log(result.dataValues, 'deserial')
         done(null, result.dataValues)
     })
 })

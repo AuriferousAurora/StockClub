@@ -11,7 +11,7 @@ var symbolCounter = 0;
     dowTickSymbols.forEach(function(symbol) {  
         axios.get(url + symbol + "/price")
         .then(function(response) {
-        const object = {Symbol: dowTickSymbols[symbolCounter], Price: response.data};
+        const object = {Symbol: symbol, Price: response.data};
         responseObject.push(object);
         symbolCounter += 1;
         return responseObject;
