@@ -1,9 +1,24 @@
 var express = require('express');
 var router = express.Router();
+var passport = require('passport')
+const db = require('../db')
 
 router.get('/manager', function(req,res){
-    
-    res.render('manager');
+    console.log(req.user)
+    console.log(req.isAuthenticated())
+    if(req.isAuthenticated()){
+        userId = req.user.id;
+        db.users.findOne({
+            where: {
+                id: userId
+            }
+        }).then((result)=>{
+            res.render('manager',{data: result})
+        })
+    } else {
+        res.redirect('login')
+    }
+    // res.render('manager');
 
 })
 
