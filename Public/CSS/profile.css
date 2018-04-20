@@ -128,3 +128,12 @@ form {
 .profileLiquidAssets span{
     padding: 0% 6%;
 }
+
+button {
+    border: none;
+    background-color: #447604;
+    color: white;
+    font-family: 'Bitter', serif;
+    padding: 5px 8px;
+    margin: 10px 0px;
+}

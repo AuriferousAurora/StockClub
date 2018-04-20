@@ -6,13 +6,8 @@ body {
 .container {
     height: auto;
     width: 100vw;
-<<<<<<< HEAD
-    display: inline-block;
-    justify-content: center;
-=======
     display: flex;
     flex-direction: column;
->>>>>>> master
     align-items: center;
     margin-top: 20px;
 }
