@@ -11,161 +11,201 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 </head>
 <body>
+        <div class='header'>
+                <div class='log'>
+                    <div class="buttons">
+                        <a><button class ="button" type="button" value="button"><span>login</span></button></a>
+                        <a><button class ="button" type= "button" value= "button"><span>logout</span></button></a>
+                    </div>
+                </div>
+                <div class='money'>
+                     <span>$</span><span class='playerMoney'><%= data.currencyAvaliable %></span>
+                </div>
+            </div>
+            <div class=title>
+                <h1 style='text-align:center' id="fantasystock">Fantasy Stock</h1>
+            </div>
 
-    <% include ./Partials/header.ejs %>
-
-
-    <%= data.emailAddress %>
     <div class='container'>
-        <h1>Username</h1>
-        <form class='form'>
+        <h1><%= data.userName %></h1>
+        <form class='form 1' action='/stockPurchased' method='post'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>  
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
             <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
         </div>
         </form>       
 

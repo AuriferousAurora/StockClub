@@ -27,10 +27,15 @@ var call = new Promise((resolve, reject) => {
 }).then((response) => {  
     let symbol = document.querySelectorAll('.symbol');
     let price = document.querySelectorAll('.price'); 
+    let hiddenSymbol = document.querySelectorAll('.hiddenTick');
+    let hiddenPrice = document.querySelectorAll('.hiddenPrice');
+  
     setTimeout(function(){
         for (var i = 0; i < 31; i++) {
             symbol[i].innerHTML = responseObject[i]['Symbol'];
             price[i].innerHTML = responseObject[i]['Price'];
+            hiddenSymbol[i].value = responseObject[i]['Symbol'];
+            hiddenPrice[i].value = responseObject[i]['Price'];
         }
     }, 1000)
 });
