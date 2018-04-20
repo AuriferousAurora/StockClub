@@ -8,178 +8,160 @@
     <link href="/CSS/manager.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 </head>
 <body>
 
     <% include ./Partials/header.ejs %>
 
     <div class='container'>
-        <h1>Username</h1>
-        <form class='form'>
+        <form class='form' action="/stockBuy" method="POST">
         <div class='stockContainer'>
-<<<<<<< HEAD
-        <form class="stockContainer" action="/manager" method="POST">
-        <p>stockSymbol:</p>
-        <input class='input' type='text' name = 'stockSymbol'><br>
-        <p>numberOfShares:</p>
-        <input class='input' type='number' name = 'numberOfShares'><br>
-        <p>userId:</p>
-        <input class='input' type='number' name = 'userId'><br>
-
-        </form>   
-         <span>NYSE</span><span>000</span><span>500</span><span>$1,000.00</span><button>Purchase</button>
-        </div>    
-        <div class='stockContainer'>
-            <span>NYSE</span><span>000</span><span>500</span><span>$1,000.00</span><button>Purchase</button>
-=======
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
->>>>>>> master
+            <span class='symbol'>AAPL</span><input type='hidden' value = 'AAPL' name='stockSymbol'/><span class='price'>purchase $</span><input type='number'><input type='submit' value='Purchase'>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>  
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>
         <form class='form'>
         <div class='stockContainer'>
-            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$'><button>Purchase</button>
+            <span class='symbol'>NYSE</span><span class='price'>$</span><input type='text' placeholder='$$$$$'><button>Purchase</button>
         </div>
         </form>       
 
