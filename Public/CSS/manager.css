@@ -3,6 +3,11 @@ body {
     margin: 0;
 }
 
+h1 {
+    color: white;
+    font-family: 'Roboto slab', serif;
+}
+
 .container {
     height: auto;
     width: 100vw;
