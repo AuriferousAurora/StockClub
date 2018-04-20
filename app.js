@@ -1,15 +1,24 @@
 var express = require('express');
-// var reload = require('reload');
+var Sequelize = require('sequelize')
+var reload = require('reload');
 var path = require('path');
 const db = require('./db');
+const expressValidator = require('express-validator');
 const passport = require('passport');
 const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser')
 
+<<<<<<< HEAD
 const cookieParser = require('cookie-parser')
+=======
+>>>>>>> master
 
 // require session and passpot local strategy
 const session = require('express-session')
+var SequelizeStore = require('connect-session-sequelize')(session.Store);
+var connection = new Sequelize('postgres://localhost:5432/stockClub');
+const cookieParser = require('cookie-parser')
+
 const LocalStrategy = require('passport-local').Strategy
 
 var app = express();
@@ -21,11 +30,33 @@ app.set('Views');
 
 app.use(express.static(__dirname + "/Public"));
 
+<<<<<<< HEAD
 app.use(cookieParser())
 app.use(passport.initialize())  
 app.use(passport.session())
 app.use(bodyParser.urlencoded({extended:true}))
 
+=======
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:true}))
+app.use(expressValidator())
+
+var myStore = new SequelizeStore({
+    db: connection
+})
+//setting session information
+app.use(cookieParser())
+app.use(session({
+    store: myStore,
+    secret: "top secret",
+    resave: false,
+    cookie: { maxAge: 14 * 24 * 60 * 60 * 1000 }
+}))
+app.use(passport.initialize())  
+app.use(passport.session())
+myStore.sync()
+
+>>>>>>> master
 app.use(require('./Routes/managerRoute'));
 app.use(require('./Routes/login'));
 app.use(require('./Routes/profileRoute'));
@@ -74,6 +105,10 @@ passport.use(new LocalStrategy(
                 bcrypt.compare(password, result.password, function(err, res) {
                     if(res) {
                         console.log("found user");
+<<<<<<< HEAD
+=======
+                        console.log(sess)
+>>>>>>> master
                         console.log(result.id);
                         return done(null, {id: result.id, username: result.userName})
                     } else {
@@ -117,7 +152,13 @@ app.post('/login',
 );
 
 app.get('/logout', (req, res) => {
+<<<<<<< HEAD
     req.logout();
+=======
+    req.session.destroy((err=>{
+        req.logout()
+    }));
+>>>>>>> master
     res.redirect('/login');
 })
 
