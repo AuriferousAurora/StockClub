@@ -1,27 +1,44 @@
 {
-  "name": "StockClub",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "dependencies": {
-    "ejs": "^2.5.8",
-    "express": "^4.16.3",
-    "node": "^9.11.0",
-    "reload": "^2.2.2"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zzhang46516/StockClub.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zzhang46516/StockClub/issues"
-  },
-  "homepage": "https://github.com/zzhang46516/StockClub#readme"
+    "name": "StockClub",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zzhang46516/StockClub.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/zzhang46516/StockClub/issues"
+    },
+    "homepage": "https://github.com/zzhang46516/StockClub#readme",
+    "dependencies": {
+        "ajax-request": "^1.2.3",
+        "axios": "^0.18.0",
+        "bcrypt": "^2.0.0",
+        "bluebird": "^3.5.1",
+        "body-parser": "^1.18.2",
+        "connect-session-sequelize": "^5.2.1",
+        "cookie-parser": "^1.4.3",
+        "ejs": "^2.5.8",
+        "express": "^4.16.3",
+        "express-session": "^1.15.6",
+        "express-validator": "^5.1.2",
+        "i": "^0.3.6",
+        "npm": "^5.8.0",
+        "passport": "^0.4.0",
+        "passport-local": "^1.0.0",
+        "pg": "^7.4.1",
+        "pg-hstore": "^2.3.2",
+        "pg-promise": "^8.2.3",
+        "reload": "^2.2.2",
+        "sequelize": "^4.37.6",
+        "sequelize-cli": "^4.0.0",
+        "winston": "^2.4.1"
+    }
 }
