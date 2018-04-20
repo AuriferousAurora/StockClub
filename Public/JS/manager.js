@@ -10,6 +10,7 @@ var symbolCounter = 0;
 var object 
 
 // Instantiates a promise named 'call'. This promise contains a forEach function that loops through the 'dowTickSymbols' array. For each pass through, the ticker symbol and the current price of the stock is appended to the responseOjbect array.
+
 var call = new Promise((resolve, reject) => {
     dowTickSymbols.forEach(function(symbol) {  
         axios.get(url + symbol + "/price")
