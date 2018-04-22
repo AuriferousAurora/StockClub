@@ -23,7 +23,20 @@ router.get('/manager', function(req,res){
 })
 
 router.post('/manager', function(req, res){
-    console.log(req.body.symbol)
+    userId = req.user.id;
+    console.log(userId)
+    db.users.findOne({
+        where: {
+            id: userId
+        }
+    }).then((result)=>{
+        res.render('manager',{data: result})
+    })
+
+    
+    
+
+    // res.render('manager')
 
 })
 

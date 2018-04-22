@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="/CSS/manager.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+</head>
+<body>
+        <div class='header'>
+                <div class='log'>
+                    <div class="buttons">
+                        <a><button class ="button" type="button" value="button"><span>login</span></button></a>
+                        <a><button class ="button" type= "button" value= "button"><span>logout</span></button></a>
+                    </div>
+                </div>
+                <div class='money'>
+                     <span>$</span><span class='playerMoney'><%= data.currencyAvaliable %></span>
+                </div>
+            </div>
+            <div class=title>
+                <h1 style='text-align:center' id="fantasystock">Fantasy Stock</h1>
+            </div>
+
+    <div class='container'>
+        <h1><%= data.userName %></h1>
+        <div id="stockList">
+        <form class='form 1' action='/manager' method='POST'>
+        <div class='stockContainer'>
+            <span class='symbol'></span><span class='price'></span><input type='text' placeholder='$$$$$' name='test1'><button>Purchase</button>
+            <input class='hiddenTick'><input class='hiddenPrice'>
+        </div>
+        </form>
+    </div>
+    </div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src='/JS/manager.js'></script>
+</body>
+</html>
